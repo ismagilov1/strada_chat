@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="backdrop-modal" data-modal="options">
+      <div class="modal">
+        <div class="header-pop noselect">
+          <div class="name-pop">Настройки</div>
+          <div class="close">X</div>
+        </div>
+        <div class="main-pop">
+          <span class="title-pop">Имя в чате</span>
+          <form action="" data-form="options" id="form_options" class="form">
+            <input type="text" id="optionsInput" class="input" />
+            <div class="btns">
+              <button id="saveOptions" class="btn button">Сохранить</button>
+              <button id="checkOptions" class="btn button">Проверить</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="backdrop-modal" data-modal="auth">
+      <div class="modal">
+        <div class="header-pop noselect">
+          <div class="name-pop">Авторизация</div>
+          <div class="close">X</div>
+        </div>
+        <div class="main-pop">
+          <span class="title-pop">Почта:</span>
+          <form action="" id="form_auth" data-form="auth" class="form">
+            <input type="text" id="mailInput" class="input" />
+            <div class="btns">
+              <button id="getCode" class="btn button">Получить код</button>
+              <button id="confirmCode" class="btn button" data-open="confirm">
+                Ввести код
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="backdrop-modal" data-modal="confirm">
+      <div class="modal">
+        <div class="header-pop noselect">
+          <div class="name-pop">Подтверждение</div>
+          <div class="close">X</div>
+        </div>
+        <div class="main-pop">
+          <span class="title-pop">Код:</span>
+          <form action="" id="form_confirm" data-form="confirm" class="form">
+            <input type="text" id="codeInput" class="input" />
+            <div class="btns">
+              <button id="login" class="btn button">Войти</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <header class="header">
+      <div class="container">
+        <nav class="navigation">
+          <button data-open="options" class="button">Настройки</button>
+          <button data-open="auth" class="button">Выйти</button>
+        </nav>
+      </div>
+    </header>
+    <main class="main">
+      <div class="container">
+        <div class="chat">
+          <div class="chat-window">
+            <template id="receivedMsg">
+              <div class="receivedMsg">
+                <p class="textMsg"></p>
+                <p id="timeStampForRecieved"><i></i></p>
+              </div>
+            </template>
+            <template id="sentMsg">
+              <div class="sentMsg">
+                <p class="textMsg"></p>
+                <p id="timeStamp"></p>
+              </div>
+            </template>
+          </div>
+          <form class="chat-message">
+            <input id="message" type="text" placeholder="сообщение..." />
+            <button type="button" id="send" class="button">-></button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script src="
+https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
+"></script>
+  <script src="./src/js/modal.js"></script>
+  <script src="./src/js/renderMsgs.js"></script>
+  <script src="./src/js/loadHistoryMsgs.js"></script>
+  <script src="./src/js/index.js"></script>
+</html>
